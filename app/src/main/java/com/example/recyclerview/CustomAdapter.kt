@@ -1,5 +1,7 @@
 package com.example.recyclerview
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +30,10 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
         holder.textView.text = ItemsViewModel.text1
         holder.textView2.text = ItemsViewModel.text2
 
+        holder.itemView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(ItemsViewModel.youtubeLink))
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     // return the number of the items in the list

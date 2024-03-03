@@ -1,5 +1,7 @@
 package com.example.recyclerview
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         image.add(R.drawable.selena)
         image.add(R.drawable.taylor)
 
+        // Initate data of title
         val title = ArrayList<String>()
         title.add("Thank U Next")
         title.add("Sweetener")
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         title.add("Lose You To Love Me")
         title.add("Cruel Summer")
 
+        // Initate data of singer
         val singer = ArrayList<String>()
         singer.add("Ariana Grande")
         singer.add("Ariana Grande")
@@ -47,11 +51,22 @@ class MainActivity : AppCompatActivity() {
         singer.add("Selena Gomez")
         singer.add("Taylor Swift")
 
+        // Initate data of youtubeLink
+        val youtubeLink = ArrayList<String>()
+        youtubeLink.add("https://www.youtube.com/watch?v=gl1aHhXnN1k")
+        youtubeLink.add("https://www.youtube.com/watch?v=6vay5SgNPpk")
+        youtubeLink.add("https://www.youtube.com/watch?v=eQNHDV7lKgE")
+        youtubeLink.add("https://www.youtube.com/watch?v=m7Bc3pLyij0")
+        youtubeLink.add("https://www.youtube.com/watch?v=ZQFmRXgeR-s")
+        youtubeLink.add("https://www.youtube.com/watch?v=ZsJ-BHohXRI")
+        youtubeLink.add("https://www.youtube.com/watch?v=zlJDTxahav0")
+        youtubeLink.add("https://www.youtube.com/watch?v=ic8j13piAhQ")
+
         // ArrayList of class ItemsViewModel
         val data = ArrayList<ItemsViewModel>()
 
-        for (i in 1..7) {
-            data.add(ItemsViewModel(image[i], title[i], singer[i]))
+        for (i in 0..7) {
+            data.add(ItemsViewModel(image[i], title[i], singer[i], youtubeLink[i]))
         }
 
         // This will pass the ArrayList to our Adapter
@@ -59,6 +74,5 @@ class MainActivity : AppCompatActivity() {
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
-
     }
 }
